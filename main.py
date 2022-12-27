@@ -11,9 +11,7 @@ columns = [v.text for v in rows[0].find_all("th")] #find all columns names and p
 for i in range(1, len(rows)):
     tds = rows[i].find_all("td")
     if len(tds) == 7:
-        values = [tds[0].text, tds[5].get_text(separator=", ").strip()]
-    else:
-        continue
-        
+        values = [tds[0].text, tds[5].get_text(separator=", ").strip()] 
+        #the 1 column is the name and the 6 column is the collateral adjectives(separated by comma)      
     print(values)
 
